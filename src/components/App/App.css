@@ -1,0 +1,30 @@
+.App {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  min-height: 100vh;
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 70px;
+  box-sizing: border-box;
+}
+
+.App__wrap {
+}
+
+.App__content {
+}
+
+@media (max-width: 840px) {
+  .App {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

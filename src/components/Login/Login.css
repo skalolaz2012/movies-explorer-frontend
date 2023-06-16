@@ -1,0 +1,123 @@
+.login {
+  max-width: 390px;
+  margin: 70px auto;
+}
+.welcome__title {
+  margin: 40px 0 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+.sign__form {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.sign__input-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+.sign__input-field_type_password-login {
+  margin-top: 24px;
+  margin-bottom: 152px;
+}
+.sign__label {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #a0a0a0;
+}
+.sign__input {
+  all: unset;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  margin: -1px;
+}
+.sign__input:focus {
+  border-bottom: 1px solid #000;
+}
+.sign__input_field_name {
+}
+.sign__field {
+}
+.name-input-error {
+}
+.sign__input-error {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  position: absolute;
+  color: #ff3055;
+}
+.input__error-field {
+}
+.sign__separator {
+  height: 1px;
+  background: #e8e8e8;
+}
+.sign__input_field_email {
+}
+.sign__submit-button {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  min-width: 396px;
+  text-align: center;
+  background-color: #3456f3;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 69px;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sign__submit-link{
+  color: #fff;
+  text-decoration: none;
+}
+
+.sign__submit-button:hover {
+  opacity: 0.7;
+}
+.sign__signout {
+  all: unset;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 16px;
+  color: #ff3055;
+  margin-bottom: 70px;
+}
+
+.sign__question {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #a0a0a0;
+}
+.sign__link {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #3456f3;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sign__link:hover {
+  opacity: 0.7;
+}

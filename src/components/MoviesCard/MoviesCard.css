@@ -1,0 +1,86 @@
+.card {
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  max-width: 270px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__away-link {
+}
+
+.card__image {
+  min-width: 270px;
+  width: 100%;
+  height: 151px;
+  display: block;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card__image:hover {
+  opacity: 0.8;
+}
+
+.card__description {
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.card__description-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__button {
+  all: unset;
+  width: 12px;
+  height: 12px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #f9f9f9;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.09);
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card__button:hover {
+  opacity: 0.7;
+}
+
+.card__button_active {
+  background: #2be080;
+}
+
+.card__button-delete{
+  all: unset;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background: url('../../images/dislike.svg') no-repeat;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card__button-delete:hover {
+  opacity: 0.7;
+}
+
+.card__duration {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #a0a0a0;
+}

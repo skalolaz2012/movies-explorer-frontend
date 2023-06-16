@@ -1,0 +1,86 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  min-height: 74px;
+}
+
+.burger-icon{
+  display: none;
+}
+
+.header_type_logged-out {
+  background-color: #073042;
+  box-shadow: -70px 0px 0px 0px #073042, 70px 0px 0px 0px #073042;
+}
+
+.header__container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.header__container_type_logged-out {
+}
+
+.header__container_type_logged-in {
+}
+
+.header__auth {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header__auth:hover {
+  opacity: 0.7;
+}
+
+.header__auth_active{
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+  margin-bottom: -10px
+}
+
+.header__auth_type_logged-out {
+  color: #fff;
+}
+
+.header__auth_type_marked{
+  background-color: #2BE080;
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 3px;
+}
+
+.header__auth_type_logged-in {
+  color: #000;
+}
+
+.header__auth-icon {
+padding-left: 13px;
+}
+
+.header__auth_type_profile{
+display: flex;
+align-items: center;
+}
+
+.header__auth_type_saved{
+  font-weight: 400;
+}
+
+@media (max-width: 480px) {
+  .header__auth {
+    font-size: 10px;
+  }
+  .header__container {
+    gap: 14px;
+  }
+  .header__auth_type_marked{
+    padding: 5px 12px;
+  }
+}

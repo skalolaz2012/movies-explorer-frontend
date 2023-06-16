@@ -1,0 +1,20 @@
+.button-more {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  margin: 50px auto 80px;
+  width: 200px;
+  padding: 11px 60px 9px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button-more:hover{
+  opacity: .7;
+}

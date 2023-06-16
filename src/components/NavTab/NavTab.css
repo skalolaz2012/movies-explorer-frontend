@@ -1,0 +1,26 @@
+.promo__button {
+  all: unset;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.promo__button:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 1120px) {
+  .promo__button {
+    display: block;
+    max-width: 131px;
+    margin: 92px auto 0;
+    margin-bottom: 10px;
+  }
+}

@@ -1,61 +1,30 @@
-import { useState, useEffect } from 'react'
-import { Route, Routes, Navigate, useNavigate } from 'react-router-dom'
-import { CurrentUserContext } from '../contexts/CurrentUserContext'
-import { auth } from '../utils/auth'
+import { Route, Routes } from 'react-router-dom'
+import './App.css'
 
-import AboutProject from '../AboutProject/AboutProject'
+import Main from '../Main/Main'
 import Movies from '../Movies/Movies'
 import SavedMovies from '../SavedMovies/SavedMovies'
 import Profile from '../Profile/Profile'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
+import Page404 from '../Page404/Page404'
 
 function App() {
   return (
-    <div className='App'>
-      <div className='page__wrap'>
-        <div className='page__content'>
-          <Header
-            email={email}
-            handleSignOut={handleSignOut}
-            loggedIn={loggedIn}
-          />
+    <div className="App">
+      <div className="App__wrap">
+        <div className="App__content">
           <Routes>
-              <Route
-                path="/"
-                element={<AboutProject />}
-              />
-              <Route
-                path="/movies"
-                element={<Movies />}
-              />
-              <Route
-                path="/saved-movies"
-                element={<SavedMovies />}
-              />
-              <Route
-                path="/profile"
-                element={<Profile />}
-              />
-              <Route
-                path="/sign-up"
-                element={<Register onRegister={handleRegister} />}
-              />
-              <Route
-                path="/sign-in"
-                element={<Login onLogin={handleLogin} />}
-              />
-              <Route
-                path="*"
-                element={
-                  loggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" />
-                }
-              />
-            </Routes>
-          <Footer />
+            <Route path="/" element={<Main />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/saved-movies" element={<SavedMovies />} />
+            <Route path="/profile" element={<Profile username="Сергей" email="test@test.ru" />} />
+            <Route path="/signup" element={<Register username="Сергей" email="test@test.ru" password="12345678901234" />} />
+            <Route path="/signin" element={<Login email="test@test.ru" />} />
+            <Route path="/page404" element={<Page404 />} />
+          </Routes>
         </div>
       </div>
-      
     </div>
   )
 }

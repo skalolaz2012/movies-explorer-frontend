@@ -1,0 +1,20 @@
+.project-link{
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #000;cursor: pointer;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.project-link:hover{
+  opacity: .7;
+}
+
+.project-link__text{
+margin: 0;
+}
+
+.project-link__icon{
+
+}

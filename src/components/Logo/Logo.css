@@ -1,0 +1,18 @@
+.header__link {
+  text-decoration: none;
+  font-size: 0;
+  align-self: center;
+}
+
+.header__logo {
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header__logo:hover {
+  opacity: 0.8;
+}
+
+.header__logo_type_login {
+}
