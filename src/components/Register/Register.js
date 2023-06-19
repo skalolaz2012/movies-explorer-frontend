@@ -57,9 +57,9 @@ const Register = ({ username, email, password }) => {
               required
               className="sign__input sign__input_field_password"
               id="password-input"
-              value=""
+              value={password || ''}
             />
-            <span className="password-input-error sign__input-error input__error-field"></span>
+            <span className="password-input-error sign__input-error input__error-field">Что-то пошло не так...</span>
           </div>
           <button
             type="submit"

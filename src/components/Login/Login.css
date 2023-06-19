@@ -74,12 +74,16 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  margin-top: 69px;
+  margin-top: 152px;
   transition: opacity 0.3s linear;
   -webkit-tap-highlight-color: transparent;
 }
 
-.sign__submit-link{
+.sign__submit-button_type_login {
+  margin-top: 221px;
+}
+
+.sign__submit-link {
   color: #fff;
   text-decoration: none;
 }
@@ -120,4 +124,52 @@
 
 .sign__link:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 1020px) {
+  .login {
+    min-height: 1024px;
+    margin-top: 232px;
+    margin-bottom: 232px;
+  }
+}
+
+@media (max-width: 720px) {
+  .login {
+    min-height: 780px;
+    margin-top: 56px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .welcome__title {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .sign__form {
+    margin-top: 80px;
+  }
+  .sign__submit-button {
+    margin-top: 309px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 260px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .sign__question {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .sign__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  .login {
+    margin-left: 20px;
+    margin-right: 20px  ;
+  }
 }

@@ -2,7 +2,8 @@
   background-color: #073042;
   box-shadow: -70px 0px 0px 0px #073042, 70px 0px 0px 0px #073042;
   color: #fff;
-  padding-bottom: 75px;
+  min-height: 524px;
+  padding-bottom: 50px;
 }
 
 .promo__wrap {
@@ -33,6 +34,10 @@
   opacity: 0.5;
   margin-top: 36px;
     margin-bottom: 146px;
+}
+
+.promo__image{
+  max-height: 304px;
 }
 
 @media (max-width: 1120px) {
@@ -87,5 +92,8 @@
   }
   .promo__container {
     gap: 24px;
+  }
+  .promo__image{
+    max-height: 206px;
   }
 }

@@ -21,6 +21,12 @@
   justify-content: space-between;
   position: relative;
 }
+.profile__input-field:first-child {
+  padding-top: 0;
+}
+.profile__input-field:last-of-type {
+  padding-bottom: 0;
+}
 .profile__label {
   font-weight: 500;
   font-size: 11px;
@@ -38,7 +44,6 @@
   padding-top: 15px;
   border-top: 1px solid #000;
   margin-top: -16px;
-
 }
 .profile__field {
 }
@@ -93,4 +98,34 @@
 }
 .profile__signout:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 1020px) {
+  .profile {
+    min-height: 445px;
+    margin-top: 236px;
+    margin-bottom: 232px;
+    justify-content: space-between;
+  }
+  .profile__title {
+    margin-top: 0;
+    margin-bottom: 96px;
+  }
+  .profile__submit-button {
+    margin-top: 210px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .profile {
+    margin-top: 70px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .profile__title{
+    margin-bottom: 80px;
+  }
+  .profile__submit-button {
+    margin-top: 379px;
+  }
 }

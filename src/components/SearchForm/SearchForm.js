@@ -18,7 +18,11 @@ const SearchForm = () => {
               required
             />
             <button className="search-form__submit" type="submit">
-              <img src={searchIconBg} alt="лупа" />
+              <img
+                src={searchIconBg}
+                alt="лупа"
+                className="search-form__submit-icon"
+              />
             </button>
           </div>
           <div className="search-form__line" />

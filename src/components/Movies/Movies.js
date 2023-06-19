@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Header from '../Header/Header'
 import SearchForm from '../SearchForm/SearchForm'
 import Preloader from '../Preloader/Preloader'
 import MoviesCardList from '../MoviesCardList/MoviesCardList'
@@ -14,7 +13,6 @@ const Movies = () => {
 
   return (
     <>
-      <Header loggedIn />
       <SearchForm />
       {isPreloaderVisible && <Preloader />}
       {!isPreloaderVisible && (
@@ -23,7 +21,6 @@ const Movies = () => {
           <Button />
         </>
       )}
-
       <Footer />
     </>
   )

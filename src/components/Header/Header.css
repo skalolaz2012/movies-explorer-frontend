@@ -4,7 +4,7 @@
   min-height: 74px;
 }
 
-.burger-icon{
+.burger__container {
   display: none;
 }
 
@@ -15,7 +15,7 @@
 
 .header__container {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -27,8 +27,8 @@
 
 .header__auth {
   font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
+  font-size: 14px;
+  line-height: 18px;
   text-decoration: none;
   cursor: pointer;
   transition: opacity 0.3s linear;
@@ -39,18 +39,18 @@
   opacity: 0.7;
 }
 
-.header__auth_active{
+.header__auth_active {
   border-bottom: 2px solid #000;
   padding-bottom: 8px;
-  margin-bottom: -10px
+  margin-bottom: -10px;
 }
 
 .header__auth_type_logged-out {
   color: #fff;
 }
 
-.header__auth_type_marked{
-  background-color: #2BE080;
+.header__auth_type_marked {
+  background-color: #2be080;
   color: #000;
   padding: 8px 20px;
   border-radius: 3px;
@@ -61,26 +61,80 @@
 }
 
 .header__auth-icon {
-padding-left: 13px;
+  padding-left: 17px;
 }
 
-.header__auth_type_profile{
-display: flex;
-align-items: center;
+.header__auth_type_profile {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
 }
 
-.header__auth_type_saved{
+.header__auth_type_saved {
   font-weight: 400;
 }
 
+@media (max-width: 960px) {
+  .burger__container {
+    display: flex;
+    align-items: center;
+  }
+  .burger-btn {
+    width: 28px;
+    height: 23px;
+    /* margin-right: 38px; */
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.3s linear;
+    -webkit-tap-highlight-color: transparent;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .burger-btn:hover {
+    opacity: 0.7;
+  }
+  .burger-btn::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: 28px;
+    background-color: #000;
+    height: 3px;
+  }
+  .burger-btn__pic {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 28px;
+    background-color: #000;
+    height: 3px;
+  }
+  .burger-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    width: 28px;
+    background-color: #000;
+    height: 3px;
+  }
+  .header__container_type_logged-in {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
+  .header{
+    margin-left: 4px;
+    margin-right: 4px;
+  }
   .header__auth {
     font-size: 10px;
   }
   .header__container {
     gap: 14px;
   }
-  .header__auth_type_marked{
+  .header__auth_type_marked {
     padding: 5px 12px;
   }
 }

@@ -22,9 +22,9 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
   .App {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

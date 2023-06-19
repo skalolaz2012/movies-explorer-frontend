@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
-import Header from '../Header/Header'
 import './Profile.css'
 
 const Profile = ({ username, email }) => {
   return (
     <>
-      <Header loggedIn />
       <section className="profile">
         <h2 className="profile__title">Привет, {username}!</h2>
         <form className="profile__form" noValidate>

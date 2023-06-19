@@ -14,5 +14,9 @@
   opacity: 0.8;
 }
 
-.header__logo_type_login {
+@media (max-width: 720px) {
+  .header__link {
+    display: block;
+    text-align: center;
+  }
 }

@@ -3,7 +3,7 @@ import ProfilePath from '../../images/profile.svg'
 import { Link, NavLink } from 'react-router-dom'
 import './Header.css'
 
-function Header({ loggedOut, loggedIn }) {
+function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
   return (
     <>
       {loggedOut && (
@@ -27,10 +27,13 @@ function Header({ loggedOut, loggedIn }) {
       )}
       {loggedIn && (
         <header className="header header_type_logged-in">
+          
           <Logo />
-          <div className='burger-icon' onClick={handleOpenMenu}>
-            <div className='burger' />
-          </div>
+          <nav className='burger__container'>
+            <div className='burger-btn' onClick={() => setMenuActive(!menuActive)} >
+              <span className='burger-btn__pic' />
+            </div>
+          </nav>
           <div className="header__container header__container_type_logged-in">
             <NavLink
               className={({ isActive }) =>

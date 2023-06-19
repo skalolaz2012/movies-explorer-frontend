@@ -1,11 +1,10 @@
 .cards {
-  margin-top: 70px;
   padding-bottom: 30px;
 }
 
-.cards-list{
-  margin: 0;
-  padding: 0;
+.cards-list {
+  margin: 70px 0 0;
+  padding: 10px 0 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -14,8 +13,20 @@
   column-gap: 20px;
 }
 
-@media (max-width: 484px) {
-  .cards {
+@media (max-width: 1023px) {
+  .cards-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 36px;
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 740px) {
+  .cards-list {
     margin-top: 36px;
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
   }
 }

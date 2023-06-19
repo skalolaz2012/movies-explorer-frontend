@@ -43,7 +43,7 @@ const Login = ({ email }) => {
           </div>
           <button
             type="submit"
-            className="sign__submit-button"
+            className="sign__submit-button sign__submit-button_type_login"
             // ${
             //   !props.isValid ? 'sign__submit-button_disabled' : ''
             // }
