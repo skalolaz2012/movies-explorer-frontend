@@ -29,7 +29,11 @@ function App() {
               path="/"
               element={
                 <>
-                  <Header loggedOut menuActive={menuActive} setMenuActive={setMenuActive} />
+                  <Header
+                    loggedOut
+                    menuActive={menuActive}
+                    setMenuActive={setMenuActive}
+                  />
                   <Main />
                 </>
               }
@@ -38,7 +42,11 @@ function App() {
               path="/movies"
               element={
                 <>
-                  <Header loggedIn menuActive={menuActive} setMenuActive={setMenuActive} />
+                  <Header
+                    loggedIn
+                    menuActive={menuActive}
+                    setMenuActive={setMenuActive}
+                  />
                   <Movies />
                 </>
               }
@@ -47,7 +55,11 @@ function App() {
               path="/saved-movies"
               element={
                 <>
-                  <Header loggedIn menuActive={menuActive} setMenuActive={setMenuActive} />
+                  <Header
+                    loggedIn
+                    menuActive={menuActive}
+                    setMenuActive={setMenuActive}
+                  />
                   <SavedMovies />
                 </>
               }
@@ -56,7 +68,11 @@ function App() {
               path="/profile"
               element={
                 <>
-                  <Header loggedIn menuActive={menuActive} setMenuActive={setMenuActive} />
+                  <Header
+                    loggedIn
+                    menuActive={menuActive}
+                    setMenuActive={setMenuActive}
+                  />
                   <Profile username="Сергей" email="test@test.ru" />
                 </>
               }

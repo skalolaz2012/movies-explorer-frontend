@@ -1,6 +1,6 @@
 import NavTab from '../NavTab/NavTab'
-import './Promo.css'
 import landingLogo from '../../images/landing-logo.svg'
+import './Promo.css'
 
 const Promo = () => {
   return (
@@ -14,7 +14,11 @@ const Promo = () => {
             Листайте ниже, чтобы узнать больше про этот проект и его создателя.
           </p>
         </div>
-        <img className="promo__image" alt="Символическое изображение" src={landingLogo} />
+        <img
+          className="promo__image"
+          alt="Символическое изображение"
+          src={landingLogo}
+        />
       </div>
       <NavTab />
     </div>

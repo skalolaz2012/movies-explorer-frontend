@@ -1,6 +1,6 @@
+import { Link, NavLink } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import ProfilePath from '../../images/profile.svg'
-import { Link, NavLink } from 'react-router-dom'
 import './Header.css'
 
 function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
@@ -27,11 +27,13 @@ function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
       )}
       {loggedIn && (
         <header className="header header_type_logged-in">
-          
           <Logo />
-          <nav className='burger__container'>
-            <div className='burger-btn' onClick={() => setMenuActive(!menuActive)} >
-              <span className='burger-btn__pic' />
+          <nav className="burger__container">
+            <div
+              className="burger-btn"
+              onClick={() => setMenuActive(!menuActive)}
+            >
+              <span className="burger-btn__pic" />
             </div>
           </nav>
           <div className="header__container header__container_type_logged-in">

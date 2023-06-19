@@ -19,14 +19,14 @@ const Profile = ({ username, email }) => {
               id="name-input"
               value={username || ''}
             />
-              <span
-                className="name-input-error profile__input-error input__error-field"
-                // ${
-                //   isValid ? '' : 'input__error_visible'
-                // }`
-              >
-                {/* {errors.name} */}
-              </span>
+            <span
+              className="name-input-error profile__input-error input__error-field"
+              // ${
+              //   isValid ? '' : 'input__error_visible'
+              // }`
+            >
+              {/* {errors.name} */}
+            </span>
           </div>
           <div className="profile__separator"></div>
           <div className="profile__input-field">
@@ -42,7 +42,7 @@ const Profile = ({ username, email }) => {
               id="email-input"
               value={email || ''}
             />
-              <span className="email-input-error profile__input-error input__error-field"></span>
+            <span className="email-input-error profile__input-error input__error-field"></span>
           </div>
           <button
             type="submit"

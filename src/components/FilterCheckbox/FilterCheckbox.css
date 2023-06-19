@@ -1,0 +1,59 @@
+.filter-checkbox__checkbox-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  min-width: 226px;
+}
+
+.filter-checkbox__checkbox {
+  position: absolute;
+  width: 1px; /* если у элемента не будет размеров, некоторые браузеры посчитают, что его вообще нет */
+  height: 1px;
+  overflow: hidden;
+}
+
+.filter-checkbox__pseudo-checkbox {
+  display: inline-block; /* элемент span теперь сможет принимать определённую ширину и высоту */
+  vertical-align: middle; /* элемент и текст будут правильно выровнены по вертикали. Работает в паре с inline-block */
+  width: 38px;
+  height: 22px;
+  cursor: pointer;
+  background: url('../../images/is_on.svg') no-repeat;
+  left: -2px;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+.filter-checkbox__pseudo-checkbox:hover {
+  opacity: 0.7;
+}
+
+.filter-checkbox__checkbox:checked + .filter-checkbox__pseudo-checkbox {
+  background: url('../../images/is_off.svg') no-repeat;
+}
+
+.filter-checkbox__checkbox-text {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media (max-width: 968px) {
+  .filter-checkbox__checkbox-wrap {
+    min-width: 207px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 680px) {
+  .filter-checkbox__checkbox-text {
+    font-size: 11px;
+    line-height: 18px;
+  }
+}

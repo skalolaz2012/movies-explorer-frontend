@@ -1,10 +1,8 @@
 .about-project {
   padding-bottom: 100px;
 }
-
 .about-project__main {
 }
-
 .about-project__steps {
   display: grid;
   column-gap: 40px;
@@ -15,10 +13,8 @@
   list-style: none;
   padding-left: 0;
 }
-
 .about-project__step {
 }
-
 .about-project__step-title {
   font-weight: 400;
   font-size: 20px;
@@ -26,7 +22,6 @@
   letter-spacing: -0.04em;
   margin: 0;
 }
-
 .about-project__step-description {
   font-weight: 400;
   font-size: 14px;
@@ -41,16 +36,13 @@
   padding-left: 0;
   margin-bottom: 0;
 }
-
 .about-project__progress-stage {
   justify-self: center;
   text-align: center;
 }
-
 .about-project__progress-stage_type_second {
   flex: 1px;
 }
-
 .about-project__progress-stage-title {
   margin: 0;
   font-weight: 400;
@@ -59,18 +51,15 @@
   min-width: 200px;
   min-height: 18px;
 }
-
 .about-project__progress-stage-title_type_first {
   padding: 9px 0;
   min-width: 228px;
   background-color: #2be080;
 }
-
 .about-project__progress-stage-title_type_second {
   padding: 9px 0;
   background-color: #f2f2f2;
 }
-
 .about-project__progress-stage-description {
   margin: 14px 0 0;
   font-weight: 500;
@@ -86,11 +75,9 @@
     margin-left: 20px;
     margin-right: 20px;
   }
-
   .about-project__progress-stage-title_type_first {
     min-width: 140px;
   }
-
   .about-project__steps {
     column-gap: 30px;
     grid-template-columns: repeat(2, 319px);

@@ -21,9 +21,16 @@ const AboutMe = () => {
             расширить кругозор, уволился и в 2022 году начал обучение в Яндекс
             Практикуме.
           </p>
-          <a className="about-me__link" href="https://github.com/skalolaz2012" target="_blank" >Github</a>
+          <a
+            className="about-me__link"
+            href="https://github.com/skalolaz2012"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
         </div>
-        <img className="about-me__photo" src={portrait} />
+        <img className="about-me__photo" src={portrait} alt="Моё фото" />
       </div>
     </section>
   )

@@ -88,12 +88,10 @@
 .sign__submit-button:hover {
   opacity: 0.7;
 }
-
 .sign__submit-link {
   color: #fff;
   text-decoration: none;
 }
-
 .sign__signout {
   all: unset;
   cursor: pointer;
@@ -106,7 +104,6 @@
   color: #ff3055;
   margin-bottom: 70px;
 }
-
 .sign__question {
   font-weight: 400;
   font-size: 14px;
@@ -124,7 +121,6 @@
   transition: opacity 0.3s linear;
   -webkit-tap-highlight-color: transparent;
 }
-
 .sign__link:hover {
   opacity: 0.7;
 }
@@ -150,6 +146,6 @@
 @media (max-width: 420px) {
   .register {
     margin-left: 20px;
-    margin-right: 20px  ;
+    margin-right: 20px;
   }
 }

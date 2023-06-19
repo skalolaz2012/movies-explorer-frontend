@@ -1,6 +1,6 @@
 const InfoTooltip = () => {
   return (
-    <div>InfoTooltip</div>
+    <div></div>
   )
 }
 

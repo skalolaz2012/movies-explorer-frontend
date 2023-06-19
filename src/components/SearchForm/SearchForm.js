@@ -1,5 +1,6 @@
-import './SearchForm.css'
 import searchIconBg from '../../images/search_find.svg'
+import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
+import './SearchForm.css'
 
 const SearchForm = () => {
   const handleSubmit = (e) => e.preventDefault()
@@ -26,18 +27,7 @@ const SearchForm = () => {
             </button>
           </div>
           <div className="search-form__line" />
-          <div className="search-form__checkbox-wrap">
-            <label htmlFor="check-box">
-              <input
-                id="check-box"
-                className="search-form__checkbox"
-                type="checkbox"
-                name="checkbox"
-              />
-              <span className="search-form__pseudo-checkbox"></span>
-            </label>
-            <span className="search-form__checkbox-text">Короткометражки</span>
-          </div>
+          <FilterCheckbox />
         </div>
       </form>
     </div>
