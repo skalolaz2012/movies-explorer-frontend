@@ -10,7 +10,7 @@ import Profile from '../Profile/Profile'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
 import Page404 from '../Page404/Page404'
-import Menu from '../Menu/Menu'
+import Navigation from '../Navigation/Navigation'
 
 function App() {
   const [menuActive, setMenuActive] = useState(false)
@@ -90,7 +90,7 @@ function App() {
             <Route path="/signin" element={<Login email="test@test.ru" />} />
             <Route path="/page404" element={<Page404 />} />
           </Routes>
-          <Menu active={menuActive} setActive={setMenuActive} items={items} />
+          <Navigation active={menuActive} setActive={setMenuActive} items={items} />
         </div>
       </div>
     </div>
