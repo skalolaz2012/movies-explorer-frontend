@@ -1,4 +1,4 @@
-.project-link {
+.app__link {
   display: flex;
   justify-content: space-between;
   text-decoration: none;
@@ -7,11 +7,17 @@
   transition: opacity 0.3s linear;
   -webkit-tap-highlight-color: transparent;
 }
-.project-link:hover {
+.app__link:hover {
   opacity: 0.7;
 }
-.project-link__text {
+.app__link-text {
   margin: 0;
 }
-.project-link__icon {
+
+@media (max-width: 767px) {
+  .app__link-icon {
+    width: 11px;
+    padding-right: 4px;
+  }
 }
+

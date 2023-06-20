@@ -20,7 +20,7 @@
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 334px) {
   .App {
     padding-left: 10px;
     padding-right: 10px;

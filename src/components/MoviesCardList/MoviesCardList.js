@@ -21,13 +21,13 @@ const MoviesCardList = () => {
     '16.png',
   ]
   return (
-    <div className="cards">
+    <section className="cards" aria-label="список фильмов">
       <ul className="cards-list">
         {cards.map((card, i) => (
           <MoviesCard path={card} key={i} />
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 

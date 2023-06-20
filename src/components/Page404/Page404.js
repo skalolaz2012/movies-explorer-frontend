@@ -10,11 +10,15 @@ function Page404() {
 
   return (
     <div className="page404">
-      <h2 className="page404__title">404</h2>
-      <p className="page404__text">Страница не найдена</p>
-      <button className="page404__button" onClick={handleMoveBack}>
-        Назад
-      </button>
+      <div className="page4040__wrap">
+        <div className="page404__description">
+          <h1 className="page404__title">404</h1>
+          <p className="page404__text">Страница не найдена</p>
+        </div>
+        <button className="page404__button" onClick={handleMoveBack}>
+          Назад
+        </button>
+      </div>
     </div>
   )
 }

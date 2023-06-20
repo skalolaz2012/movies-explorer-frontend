@@ -8,16 +8,18 @@ import Footer from '../Footer/Footer'
 
 const Main = () => {
   return (
-    <AnchorProvider>
-      <Promo />
-      <AnchorSection id="about">
-        <AboutProject />
-      </AnchorSection>
-      <Techs />
-      <AboutMe />
-      <Portfolio />
-      <Footer />
-    </AnchorProvider>
+    <main className="main">
+      <AnchorProvider>
+        <Promo />
+        <AnchorSection id="about">
+          <AboutProject />
+        </AnchorSection>
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+        <Footer />
+      </AnchorProvider>
+    </main>
   )
 }
 

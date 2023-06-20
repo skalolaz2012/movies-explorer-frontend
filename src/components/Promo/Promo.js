@@ -4,7 +4,7 @@ import './Promo.css'
 
 const Promo = () => {
   return (
-    <div className="promo">
+    <section className="promo">
       <div className="promo__wrap">
         <div className="promo__container">
           <h1 className="promo__title">
@@ -21,7 +21,7 @@ const Promo = () => {
         />
       </div>
       <NavTab />
-    </div>
+    </section>
   )
 }
 

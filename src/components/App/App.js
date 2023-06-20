@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 import Header from '../Header/Header'
@@ -11,6 +11,7 @@ import Register from '../Register/Register'
 import Login from '../Login/Login'
 import Page404 from '../Page404/Page404'
 import Navigation from '../Navigation/Navigation'
+import iconPath from '../../images/profile.svg'
 
 function App() {
   const [menuActive, setMenuActive] = useState(false)
@@ -18,8 +19,13 @@ function App() {
     { value: 'Главная', href: '/' },
     { value: 'Фильмы', href: '/movies' },
     { value: 'Сохранённые фильмы', href: '/saved-movies' },
-    { value: 'Аккаунт', href: '/profile' },
   ]
+  const lastItem = { value: 'Аккаунт', href: '/profile', icon: iconPath }
+  useEffect(() => {
+    if (menuActive) document.body.style.overflow = 'hidden'
+    else document.body.style.overflow = 'visible'
+  }, [menuActive])
+
   return (
     <div className="App">
       <div className="App__wrap">
@@ -90,7 +96,12 @@ function App() {
             <Route path="/signin" element={<Login email="test@test.ru" />} />
             <Route path="/page404" element={<Page404 />} />
           </Routes>
-          <Navigation active={menuActive} setActive={setMenuActive} items={items} />
+          <Navigation
+            active={menuActive}
+            setActive={setMenuActive}
+            items={items}
+            lastItem={lastItem}
+          />
         </div>
       </div>
     </div>

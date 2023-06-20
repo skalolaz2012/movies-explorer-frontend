@@ -9,7 +9,7 @@ function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
       {loggedOut && (
         <header className="header header_type_logged-out">
           <Logo />
-          <div className="header__container header__container_type_logged-out">
+          <nav className="header__container header__container_type_logged-out">
             <Link
               className="header__auth header__auth_type_logged-out"
               to="/signup"
@@ -22,21 +22,21 @@ function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
             >
               Войти
             </Link>
-          </div>
+          </nav>
         </header>
       )}
       {loggedIn && (
         <header className="header header_type_logged-in">
           <Logo />
-          <nav className="burger__container">
-            <div
+          <div className="burger__container">
+            <button
               className="burger-btn"
               onClick={() => setMenuActive(!menuActive)}
             >
               <span className="burger-btn__pic" />
-            </div>
-          </nav>
-          <div className="header__container header__container_type_logged-in">
+            </button>
+          </div>
+          <nav className="header__container header__container_type_logged-in">
             <NavLink
               className={({ isActive }) =>
                 `header__auth header__auth_type_logged-in ${
@@ -72,7 +72,7 @@ function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
                 className="header__auth-icon"
               />
             </NavLink>
-          </div>
+          </nav>
         </header>
       )}
     </>

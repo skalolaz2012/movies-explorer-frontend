@@ -9,19 +9,21 @@ const Footer = () => {
         Учебный проект Яндекс.Практикум х BeatFilm.
       </h4>
       <div className="footer__wrap">
-        <small className="footer__copyright">&copy; {year.getFullYear()}</small>
+        <p className="footer__copyright">&copy; {year.getFullYear()}</p>
         <nav className="footer__links">
           <ul className="footer__links-list">
             <li className="footer__links-item">
               <ProjectLink
                 link="https://practicum.yandex.ru"
                 text="Яндекс.Практикум"
+                icon={false}
               />
             </li>
             <li className="footer__links-item">
               <ProjectLink
                 link="https://github.com/skalolaz2012"
                 text="Github"
+                icon={false}
               />
             </li>
           </ul>

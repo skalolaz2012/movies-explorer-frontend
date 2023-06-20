@@ -1,6 +1,13 @@
 .register {
-  max-width: 390px;
-  margin: 70px auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.register__wrap {
+  max-width: 396px;
+  max-height: 560px;
 }
 .welcome__title {
   margin: 40px 0 0;
@@ -19,12 +26,11 @@
   gap: 5px;
 }
 .sign__input-field_type_email {
-  margin-top: 19px;
+  margin-top: 22px;
 }
 .sign__input-field_type_password-register {
   position: relative;
   margin-top: 24px;
-  margin-bottom: 85px;
 }
 .sign__label {
   font-weight: 400;
@@ -74,6 +80,8 @@
   all: unset;
   display: block;
   cursor: pointer;
+  padding-top: 13px;
+  padding-bottom: 15px;
   min-width: 396px;
   text-align: center;
   background-color: #3456f3;
@@ -81,9 +89,9 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  margin-top: 152px;
   transition: opacity 0.3s linear;
   -webkit-tap-highlight-color: transparent;
+  margin-top: 152px;
 }
 .sign__submit-button:hover {
   opacity: 0.7;
@@ -125,27 +133,51 @@
   opacity: 0.7;
 }
 
-@media (max-width: 1020px) {
-  .register {
-    min-height: 1024px;
-    margin-top: 232px;
-    margin-bottom: 232px;
-  }
-}
-
 @media (max-width: 720px) {
-  .register {
-    min-height: 780px;
+  .register__wrap {
     margin-top: 56px;
     margin-bottom: 30px;
+  }
+  .welcome__title {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .sign__form {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+  }
+  .sign__submit-button {
     margin-left: auto;
     margin-right: auto;
+    min-width: 260px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .sign__question {
+    font-size: 12px;
+    line-height: 15px;
+    position: relative;
+    top: 12px;
+  }
+  .sign__link {
+    font-size: 12px;
+    line-height: 15px;
   }
 }
 
 @media (max-width: 420px) {
-  .register {
-    margin-left: 20px;
-    margin-right: 20px;
+  .register__wrap {
+    margin: 0 20px;
+    padding-top: 126px;
+    padding-bottom: 30px;
+  }
+    .sign__submit-button {
+    margin-top: 0;
+  }
+  .sign__question {
+    top: 0;
   }
 }

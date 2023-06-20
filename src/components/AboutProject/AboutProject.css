@@ -6,7 +6,7 @@
 .about-project__steps {
   display: grid;
   column-gap: 40px;
-  grid-template-columns: repeat(2, 550px);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   justify-content: center;
   margin-top: 70px;
@@ -69,7 +69,7 @@
   align-self: center;
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1279px) {
   .about-project {
     padding-bottom: 90px;
     margin-left: 20px;
@@ -80,7 +80,7 @@
   }
   .about-project__steps {
     column-gap: 30px;
-    grid-template-columns: repeat(2, 319px);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
   }
   .about-project__progress {

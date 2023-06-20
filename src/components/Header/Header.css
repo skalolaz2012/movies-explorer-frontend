@@ -66,6 +66,8 @@
     align-items: center;
   }
   .burger-btn {
+    all: unset;
+    display: block;
     width: 28px;
     height: 23px;
     /* margin-right: 38px; */

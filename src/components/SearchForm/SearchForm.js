@@ -5,7 +5,7 @@ import './SearchForm.css'
 const SearchForm = () => {
   const handleSubmit = (e) => e.preventDefault()
   return (
-    <div className="search-form__content">
+    <section className="search-form__content">
       <form className="search-form" onSubmit={handleSubmit} noValidate>
         <div className="search-form__wrap">
           <div className="search-form__text-wrap">
@@ -30,7 +30,7 @@ const SearchForm = () => {
           <FilterCheckbox />
         </div>
       </form>
-    </div>
+    </section>
   )
 }
 

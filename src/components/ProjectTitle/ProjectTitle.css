@@ -1,6 +1,6 @@
-.project__head-container {
+.app__head-container {
 }
-.project__title {
+.app__title {
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
@@ -12,13 +12,13 @@
 }
 
 @media (max-width: 840px) {
-  .project__title {
+  .app__title {
     margin-top: 90px;
   }
 }
 
 @media (max-width: 540px) {
-  .project__title {
+  .app__title {
     font-size: 18px;
     line-height: 22px;
     margin-top: 70px;
