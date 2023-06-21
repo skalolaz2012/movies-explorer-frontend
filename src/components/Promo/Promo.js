@@ -1,5 +1,5 @@
 import NavTab from '../NavTab/NavTab'
-import landingLogo from '../../images/landing-logo.svg'
+import landingLogo from '../../images/landing-logo.png'
 import './Promo.css'
 
 const Promo = () => {
