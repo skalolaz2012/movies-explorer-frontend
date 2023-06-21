@@ -20,8 +20,9 @@
   }
 }
 
-@media (max-width: 334px) {
+@media (max-width: 380px) {
   .App {
+    box-sizing: border-box;
     padding-left: 10px;
     padding-right: 10px;
   }
