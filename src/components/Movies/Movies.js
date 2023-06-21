@@ -12,7 +12,7 @@ const Movies = () => {
   }, 500)
 
   return (
-    <>
+    <main>
       <SearchForm />
       {isPreloaderVisible && <Preloader />}
       {!isPreloaderVisible && (
@@ -22,7 +22,7 @@ const Movies = () => {
         </>
       )}
       <Footer />
-    </>
+    </main>
   )
 }
 

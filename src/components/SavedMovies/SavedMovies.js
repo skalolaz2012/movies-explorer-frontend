@@ -4,11 +4,11 @@ import Footer from '../Footer/Footer'
 
 const SavedMovies = () => {
   return (
-    <>
+    <main>
       <SearchForm />
       <SavedMoviesCardList />
       <Footer />
-    </>
+    </main>
   )
 }
 

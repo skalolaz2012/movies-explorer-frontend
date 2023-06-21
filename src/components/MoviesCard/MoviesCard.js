@@ -10,7 +10,7 @@ const MoviesCard = ({ path }) => {
   }
   return (
     <li className="card">
-      <a className="card__away-link" href="#" target="_blank" >
+      <a className="card__away-link" href="youtube.com" target="_blank" >
         <img
           className="card__image"
           src={require(`../../images/${path}`)}

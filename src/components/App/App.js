@@ -28,82 +28,78 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App__wrap">
-        <div className="App__content">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Header
-                    loggedOut
-                    menuActive={menuActive}
-                    setMenuActive={setMenuActive}
-                  />
-                  <Main />
-                </>
-              }
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header
+                loggedOut
+                menuActive={menuActive}
+                setMenuActive={setMenuActive}
+              />
+              <Main />
+            </>
+          }
+        />
+        <Route
+          path="/movies"
+          element={
+            <>
+              <Header
+                loggedIn
+                menuActive={menuActive}
+                setMenuActive={setMenuActive}
+              />
+              <Movies />
+            </>
+          }
+        />
+        <Route
+          path="/saved-movies"
+          element={
+            <>
+              <Header
+                loggedIn
+                menuActive={menuActive}
+                setMenuActive={setMenuActive}
+              />
+              <SavedMovies />
+            </>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <>
+              <Header
+                loggedIn
+                menuActive={menuActive}
+                setMenuActive={setMenuActive}
+              />
+              <Profile username="Сергей" email="test@test.ru" />
+            </>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <Register
+              username="Сергей"
+              email="test@test.ru"
+              password="12345678901234"
             />
-            <Route
-              path="/movies"
-              element={
-                <>
-                  <Header
-                    loggedIn
-                    menuActive={menuActive}
-                    setMenuActive={setMenuActive}
-                  />
-                  <Movies />
-                </>
-              }
-            />
-            <Route
-              path="/saved-movies"
-              element={
-                <>
-                  <Header
-                    loggedIn
-                    menuActive={menuActive}
-                    setMenuActive={setMenuActive}
-                  />
-                  <SavedMovies />
-                </>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <>
-                  <Header
-                    loggedIn
-                    menuActive={menuActive}
-                    setMenuActive={setMenuActive}
-                  />
-                  <Profile username="Сергей" email="test@test.ru" />
-                </>
-              }
-            />
-            <Route
-              path="/signup"
-              element={
-                <Register
-                  username="Сергей"
-                  email="test@test.ru"
-                  password="12345678901234"
-                />
-              }
-            />
-            <Route path="/signin" element={<Login email="test@test.ru" />} />
-            <Route path="/page404" element={<Page404 />} />
-          </Routes>
-          <Navigation
-            active={menuActive}
-            setActive={setMenuActive}
-            items={items}
-            lastItem={lastItem}
-          />
-        </div>
-      </div>
+          }
+        />
+        <Route path="/signin" element={<Login email="test@test.ru" />} />
+        <Route path="/page404" element={<Page404 />} />
+      </Routes>
+      <Navigation
+        active={menuActive}
+        setActive={setMenuActive}
+        items={items}
+        lastItem={lastItem}
+      />
     </div>
   )
 }

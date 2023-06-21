@@ -2,10 +2,10 @@ import './Project-link.css'
 
 const ProjectLink = ({ link, text, icon }) => {
   return (
-    <a className="app__link" href={link} target="_blank" rel="noreferrer">
-      <p className="app__link-text">{text}</p>
+    <a className="link" href={link} target="_blank" rel="noreferrer">
+      <p className="link__text">{text}</p>
       {icon !== false ? (
-        <img className="app__link-icon" src={icon} alt="Стрелка" />
+        <img className="link__icon" src={icon} alt="Стрелка" />
       ) : (
         ''
       )}

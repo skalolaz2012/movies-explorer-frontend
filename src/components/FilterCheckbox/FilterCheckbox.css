@@ -15,22 +15,36 @@
 .filter-checkbox__pseudo-checkbox {
   display: inline-block; /* элемент span теперь сможет принимать определённую ширину и высоту */
   vertical-align: middle; /* элемент и текст будут правильно выровнены по вертикали. Работает в паре с inline-block */
-  width: 38px;
-  height: 22px;
+  width: 36px;
+  height: 20px;
   cursor: pointer;
-  background: url('../../images/is_on.svg') no-repeat;
-  left: -2px;
+  background-color: #2be080;
+  border-radius: 20px;
   transition: opacity 0.3s linear;
   -webkit-tap-highlight-color: transparent;
+  position: relative;
 }
 .filter-checkbox__pseudo-checkbox:hover {
   opacity: 0.7;
 }
-
-.filter-checkbox__checkbox:checked + .filter-checkbox__pseudo-checkbox {
-  background: url('../../images/is_off.svg') no-repeat;
+.filter-checkbox__pseudo-checkbox::after {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
 }
+.filter-checkbox__checkbox:checked + .filter-checkbox__pseudo-checkbox {
+  background-color: #EBEBEB;
+}
+.filter-checkbox__checkbox:checked + .filter-checkbox__pseudo-checkbox::after{
+  left: 2px;
 
+}
 .filter-checkbox__checkbox-text {
   font-weight: 400;
   font-size: 13px;

@@ -3,7 +3,7 @@ import './Profile.css'
 
 const Profile = ({ username, email }) => {
   return (
-    <>
+    <main>
       <section className="profile">
         <h1 className="profile__title">Привет, {username}!</h1>
         <div className="profile__wrap">
@@ -69,7 +69,7 @@ const Profile = ({ username, email }) => {
           </Link>
         </div>
       </section>
-    </>
+    </main>
   )
 }
 
