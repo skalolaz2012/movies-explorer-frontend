@@ -1,19 +1,19 @@
-.header__link {
+.header-link {
   text-decoration: none;
   font-size: 0;
   align-self: center;
 }
-.header__logo {
+.header-link__logo {
   cursor: pointer;
   transition: opacity 0.3s linear;
   -webkit-tap-highlight-color: transparent;
 }
-.header__logo:hover {
+.header-link__logo:hover {
   opacity: 0.8;
 }
 
 @media (max-width: 720px) {
-  .header__link {
+  .header-link {
     display: block;
     text-align: center;
   }

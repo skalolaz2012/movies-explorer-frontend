@@ -28,12 +28,12 @@ function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
       {loggedIn && (
         <header className="header header_type_logged-in">
           <Logo />
-          <div className="burger__container">
+          <div className="burger-container">
             <button
-              className="burger-btn"
+              className="burger-container__btn"
               onClick={() => setMenuActive(!menuActive)}
             >
-              <span className="burger-btn__pic" />
+              <span className="burger-container__pic" />
             </button>
           </div>
           <nav className="header__container header__container_type_logged-in">

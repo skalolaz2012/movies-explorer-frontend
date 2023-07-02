@@ -1,6 +1,9 @@
 .sign__input-field_type_password-login {
   margin-top: 22px;
 }
+.sign__bottom-wrap_type_login {
+  margin-top: 0;
+}
 .sign__input_field_name {
 }
 .sign__field {
@@ -10,4 +13,16 @@
 .input__error-field {
 }
 .sign__input_field_email {
+}
+
+@media (max-width: 1020px) {
+  .sign__bottom-wrap_type_login {
+    margin-top: 20vh;
+  }
+}
+
+@media (max-width: 420px) {
+  .sign__bottom-wrap_type_login {
+    margin-top: 22vh;
+  }
 }

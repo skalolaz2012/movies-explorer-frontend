@@ -2,7 +2,7 @@ import './FilterCheckbox.css'
 
 const FilterCheckbox = () => {
   return (
-    <div className="filter-checkbox__checkbox-wrap">
+    <div className="filter-checkbox">
       <label htmlFor="check-box">
         <input
           id="check-box"

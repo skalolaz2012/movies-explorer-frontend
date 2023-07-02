@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   /* margin-bottom: 60px; */
 }
@@ -45,11 +45,21 @@
   opacity: 0.7;
 }
 
+@media (max-width: 1020px) {
+  .page404 {
+    justify-content: center;
+  }
+  .page404__wrap{
+    margin-bottom: 10vh;
+  }
+}
+
 @media (max-width: 520px) {
   .page404 {
-    margin-bottom: 0;
+    justify-content: flex-end;
   }
   .page404__wrap {
+    margin-bottom: 0;
   }
   .page404__title {
     font-size: 80px;
@@ -58,10 +68,12 @@
   .page404__text {
     font-size: 12px;
     line-height: 15px;
+    margin-top: 10px;
   }
   .page404__button {
-    justify-self: end;
     font-size: 12px;
     line-height: 15px;
+    margin-bottom: 4vh;
+    margin-top: 36vh;
   }
 }

@@ -45,7 +45,7 @@
   all: unset;
   width: 12px;
   height: 12px;
-  border: 4px solid #fff;
+  border: 2px solid #fff;
   border-radius: 50%;
   cursor: pointer;
   background: #f9f9f9;
@@ -78,7 +78,7 @@
   color: #a0a0a0;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .card {
     max-width: 339px;
     max-height: 257px;
@@ -88,7 +88,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .card__description {
     max-height: 39px;
   }

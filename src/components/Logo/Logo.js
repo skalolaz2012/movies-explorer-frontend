@@ -4,12 +4,12 @@ import './Logo.css'
 
 function Logo(login) {
   return (
-    <Link className="header__link" to="/">
+    <Link className="header-link" to="/">
       <img
         src={logoPath}
         alt="Логотип в виде полусмайлика"
-        className={`header__logo ${
-          login ? 'header__logo_type_login-media' : ''
+        className={`header-link__logo ${
+          login ? 'header-link__logo_type_login-media' : ''
         }`}
       />
     </Link>

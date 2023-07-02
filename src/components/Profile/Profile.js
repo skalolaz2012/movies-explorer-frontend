@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+
 import './Profile.css'
 
 const Profile = ({ username, email }) => {
+  const [handleChangeInputs, setHandleChangeInputs] = useState(false)
+  function handleChange(e) {
+    e.preventDefault()
+  }
   return (
     <main>
       <section className="profile">
@@ -50,23 +56,41 @@ const Profile = ({ username, email }) => {
           </div>
         </div>
         <div className="profile__buttons-wrap">
-          <button
-            type="submit"
-            className="profile__submit-button"
-            // ${
-            //   !props.isValid ? 'profile__submit-button_disabled' : ''
-            // }
-            // disabled={!props.isValid}
-          >
-            Редактировать
-          </button>
-          <Link
-            className="profile__signout"
-            // onClick={handleSignOut}
-            to="/signin"
-          >
-            Выйти из аккаунта
-          </Link>
+          {handleChangeInputs ? (
+            <button
+              type="submit"
+              className="profile__submit"
+              onClick={() => setHandleChangeInputs(!handleChangeInputs)}
+              onSubmit={handleChange}
+              // ${
+              //   !props.isValid ? 'profile__submit-button_disabled' : ''
+              // }
+              // disabled={!props.isValid}
+            >
+              Сохранить
+            </button>
+          ) : (
+            <>
+              <button
+                type="button"
+                className="profile__submit-button"
+                onClick={() => setHandleChangeInputs(!handleChangeInputs)}
+                // ${
+                //   !props.isValid ? 'profile__submit-button_disabled' : ''
+                // }
+                // disabled={!props.isValid}
+              >
+                Редактировать
+              </button>
+              <Link
+                className="profile__signout"
+                // onClick={handleSignOut}
+                to="/signin"
+              >
+                Выйти из аккаунта
+              </Link>
+            </>
+          )}
         </div>
       </section>
     </main>

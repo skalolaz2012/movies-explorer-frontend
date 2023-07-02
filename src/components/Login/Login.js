@@ -46,7 +46,7 @@ const Login = ({ email }) => {
               </div>
             </form>
           </div>
-          <div className="sign__bottom-wrap">
+          <div className="sign__bottom-wrap sign__bottom-wrap_type_login">
             <button
               type="submit"
               className="sign__submit-button"

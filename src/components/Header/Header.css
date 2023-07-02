@@ -3,7 +3,7 @@
   justify-content: space-between;
   min-height: 74px;
 }
-.burger__container {
+.burger-container {
   display: none;
 }
 .header_type_logged-out {
@@ -16,6 +16,7 @@
   align-items: center;
 }
 .header__container_type_logged-out {
+  gap: 30px;
 }
 .header__container_type_logged-in {
 }
@@ -37,6 +38,8 @@
   margin-bottom: -10px;
 }
 .header__auth_type_logged-out {
+  font-size: 12px;
+  line-height: 16px;
   color: #fff;
 }
 .header__auth_type_marked {
@@ -61,11 +64,11 @@
 }
 
 @media (max-width: 960px) {
-  .burger__container {
+  .burger-container {
     display: flex;
     align-items: center;
   }
-  .burger-btn {
+  .burger-container__btn {
     all: unset;
     display: block;
     width: 28px;
@@ -78,10 +81,10 @@
     padding-left: 8px;
     padding-right: 8px;
   }
-  .burger-btn:hover {
+  .burger-container__btn:hover {
     opacity: 0.7;
   }
-  .burger-btn::before {
+  .burger-container__btn::before {
     content: '';
     position: absolute;
     top: 0px;
@@ -89,7 +92,7 @@
     background-color: #000;
     height: 3px;
   }
-  .burger-btn__pic {
+  .burger-container__pic {
     content: '';
     position: absolute;
     top: 10px;
@@ -97,7 +100,7 @@
     background-color: #000;
     height: 3px;
   }
-  .burger-btn::after {
+  .burger-container__btn::after {
     content: '';
     position: absolute;
     bottom: 0px;
@@ -107,6 +110,16 @@
   }
   .header__container_type_logged-in {
     display: none;
+  }
+  .header_type_logged-in {
+    overflow: hidden;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 92vw;
+    z-index: 999;
+    box-shadow: -50vw 0px 0px 0px #fff, 50vw 0px 0px 0px #fff;
+
   }
 }
 
@@ -121,7 +134,30 @@
   .header__container {
     gap: 14px;
   }
+  .header_type_logged-in {
+    overflow: visible;
+    background-color: none;
+    position: relative;
+    z-index: 1;
+  }
   .header__auth_type_marked {
     padding: 5px 12px;
+  }
+  .burger-container__btn {
+    width: 22px;
+    height: 20.5px;
+  }
+  .burger-container__btn::before {
+    width: 22px;
+    height: 2.5px;
+  }
+  .burger-container__pic {
+    top: 9px;
+    width: 22px;
+    height: 2.5px;
+  }
+  .burger-container__btn::after {
+    width: 22px;
+    height: 2.5px;
   }
 }

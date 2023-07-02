@@ -5,8 +5,8 @@ import './SearchForm.css'
 const SearchForm = () => {
   const handleSubmit = (e) => e.preventDefault()
   return (
-    <section className="search-form__content">
-      <form className="search-form" onSubmit={handleSubmit} noValidate>
+    <section className="search-form">
+      <form className="search-form__content" onSubmit={handleSubmit} noValidate>
         <div className="search-form__wrap">
           <div className="search-form__text-wrap">
             <label className="search-form__label" htmlFor="films" />
