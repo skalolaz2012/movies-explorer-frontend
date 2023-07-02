@@ -116,10 +116,15 @@
     background-color: #fff;
     position: fixed;
     top: 0;
-    width: 92vw;
+    width: calc(100% - 140px);
     z-index: 999;
     box-shadow: -50vw 0px 0px 0px #fff, 50vw 0px 0px 0px #fff;
+  }
+}
 
+@media (max-width: 840px) {
+  .header_type_logged-in {
+    width: calc(100% - 60px);
   }
 }
 
@@ -136,12 +141,16 @@
   }
   .header_type_logged-in {
     overflow: visible;
-    background-color: none;
+    background-color: transparent;
     position: relative;
+    width: 100%;
     z-index: 1;
   }
   .header__auth_type_marked {
     padding: 5px 12px;
+  }
+  .burger-container{
+    margin-right: 7px;
   }
   .burger-container__btn {
     width: 22px;

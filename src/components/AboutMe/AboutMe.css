@@ -51,7 +51,7 @@
   border-radius: 10px;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 1040px) {
   .about-me {
     margin-left: 20px;
     margin-right: 20px;

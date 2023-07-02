@@ -19,8 +19,8 @@ function App() {
     { value: 'Главная', href: '/' },
     { value: 'Фильмы', href: '/movies' },
     { value: 'Сохранённые фильмы', href: '/saved-movies' },
+    { value: 'Аккаунт', href: '/profile', icon: iconPath },
   ]
-  const lastItem = { value: 'Аккаунт', href: '/profile', icon: iconPath }
   useEffect(() => {
     if (menuActive) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = 'visible'
@@ -98,7 +98,6 @@ function App() {
         active={menuActive}
         setActive={setMenuActive}
         items={items}
-        lastItem={lastItem}
       />
     </div>
   )

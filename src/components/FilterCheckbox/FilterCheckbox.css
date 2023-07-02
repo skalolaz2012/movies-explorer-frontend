@@ -58,7 +58,7 @@
 }
 
 @media (max-width: 968px) {
-  .filter-checkbox__checkbox-wrap {
+  .filter-checkbox {
     min-width: 207px;
     gap: 15px;
   }

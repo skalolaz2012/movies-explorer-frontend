@@ -46,29 +46,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
   margin: 0;
   box-sizing: border-box;
-}
-.menu__list-wrap {
-  display: flex;
   gap: 28px;
-  flex-direction: column;
-  align-items: center;
 }
 .menu__item {
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
 }
-.menu__item_type_last {
+.menu__item:last-of-type {
   display: flex;
   align-items: center;
   gap: 15px;
   font-size: 14px;
   line-height: 16px;
   margin-bottom: 5vh;
+  margin-top: 58vh;
 }
 .menu__link {
   text-decoration: none;
@@ -97,8 +93,6 @@
   .menu__list {
     padding-top: 97px;
     padding-bottom: 55px;
-  }
-  .menu__list-wrap{
     gap: 24px;
   }
   .menu__link:hover {
@@ -108,5 +102,9 @@
   .menu__link_active {
     padding-bottom: 7px;
     margin-bottom: -9px;
+  }
+  .menu__item:last-of-type {
+    margin-bottom: 0;
+    margin-top: 54vh;
   }
 }
