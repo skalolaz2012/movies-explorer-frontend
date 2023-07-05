@@ -1,0 +1,219 @@
+.sign {
+  height: 100vh;
+  max-width: 390px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sign__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  /* max-height: 560px; */
+}
+.sign__top-wrap {
+  align-self: start;
+  width: 100%;
+  max-height: 560px;
+}
+.welcome__title {
+  margin: 40px 0 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+.sign__form {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.sign__input-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+.sign__input-field_type_email {
+  margin-top: 22px;
+}
+.sign__input-field_type_password-register {
+  position: relative;
+  margin-top: 24px;
+}
+.sign__label {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #a0a0a0;
+}
+.sign__input {
+  all: unset;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  margin: -1px;
+}
+.sign__input:focus {
+  border-bottom: 1px solid #000;
+}
+.sign__input_field_name {
+}
+.sign__field {
+}
+.name-input-error {
+}
+#password-input {
+  color: #ff3055;
+  font-weight: 400;
+}
+.sign__input-error {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  position: absolute;
+  top: 50px;
+  color: #ff3055;
+}
+.input__error-field {
+}
+.sign__separator {
+  height: 1px;
+  background: #e8e8e8;
+}
+.sign__input_field_email {
+}
+.sign__bottom-wrap {
+  margin-top: 0;
+}
+.sign__submit-button {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  min-width: 396px;
+  text-align: center;
+  background-color: #3456f3;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+.sign__submit-button:hover {
+  opacity: 0.7;
+}
+.sign__submit-link {
+  color: #fff;
+  text-decoration: none;
+}
+.sign__signout {
+  all: unset;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 16px;
+  color: #ff3055;
+  margin-bottom: 70px;
+}
+.sign__question {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #a0a0a0;
+  margin-bottom: 0;
+}
+.sign__link {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #3456f3;
+  transition: opacity 0.3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+.sign__link:hover {
+  opacity: 0.7;
+}
+.sign__bottom-wrap_type_register {
+  margin-top: 0;
+}
+
+@media (max-width: 1020px) {
+  .sign__wrap {
+    justify-content: center;
+  }
+  .sign__bottom-wrap_type_register {
+    margin-top: 13vh;
+  }
+}
+
+@media (max-width: 720px) {
+  .sign {
+    max-width: 260px;
+  }
+  .sign__top-wrap {
+    margin-top: 56px;
+    margin-bottom: 30px;
+  }
+  .welcome__title {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .sign__form {
+    margin-top: 80px;
+  }
+  .sign__submit-button {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 260px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .sign__question {
+    font-size: 12px;
+    line-height: 15px;
+    position: relative;
+    top: 12px;
+  }
+  .sign__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  .sign__wrap {
+    padding-top: 56px;
+    padding-bottom: 30px;
+  }
+  .sign__top-wrap {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sign__submit-button {
+    margin-top: 0;
+  }
+  .sign__question {
+    top: 0;
+  }
+  .sign__bottom-wrap{
+    flex-basis: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
