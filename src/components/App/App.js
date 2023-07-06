@@ -15,12 +15,14 @@ import iconPath from '../../images/profile.svg'
 
 function App() {
   const [menuActive, setMenuActive] = useState(false)
+  
   const items = [
     { value: 'Главная', href: '/' },
     { value: 'Фильмы', href: '/movies' },
     { value: 'Сохранённые фильмы', href: '/saved-movies' },
     { value: 'Аккаунт', href: '/profile', icon: iconPath },
   ]
+
   useEffect(() => {
     if (menuActive) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = 'visible'
