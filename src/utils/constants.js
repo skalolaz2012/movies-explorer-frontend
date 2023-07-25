@@ -2,7 +2,7 @@ export const EMAIL_PATTERN =
   /[^ "<>#%]+[^ "<>#%]+\@[^ "<>#%]+[^ "<>#%]+\.[^ "<>#%]+[^ "<>#%]+/
 export const NOMOREPARTIES_URL = 'https://api.nomoreparties.co/beatfilm-movies'
 export const NOMOREPARTIES_IMG_URL = 'https://api.nomoreparties.co'
-export const BASE_URL = 'https://api.diploma-saperov.nomoredomains.rocks/'
+export const BASE_URL = 'https://api.diploma-saperov.nomoredomains.rocks'
 // export const BASE_URL = 'http://localhost:3000'
 export const SCREEN_SMALL = 320
 export const SCREEN_MIDDLE = 768
