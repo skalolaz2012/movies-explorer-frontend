@@ -3,10 +3,10 @@ import Logo from '../Logo/Logo'
 import ProfilePath from '../../images/profile.svg'
 import './Header.css'
 
-function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
+function Header({ isDark, menuActive, setMenuActive }) {
   return (
     <>
-      {loggedOut && (
+      {!isDark && (
         <header className="header header_type_logged-out">
           <Logo />
           <nav className="header__container header__container_type_logged-out">
@@ -25,7 +25,7 @@ function Header({ loggedOut, loggedIn, menuActive, setMenuActive }) {
           </nav>
         </header>
       )}
-      {loggedIn && (
+      {isDark && (
         <header className="header header_type_logged-in">
           <Logo />
           <div className="burger-container">

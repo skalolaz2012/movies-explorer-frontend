@@ -1,5 +1,5 @@
-import './NavTab.css'
 import { AnchorLink } from 'react-anchor-navigation'
+import './NavTab.css'
 
 function NavTab() {
   return (

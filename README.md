@@ -1,6 +1,8 @@
 # movies-explorer-frontend
 Фронтенд часть дипломного проекта Яндекс Практикума студента Сергея Сапёрова 
 
+[Ссылка на пул реквест](https://github.com/skalolaz2012/movies-explorer-frontend/pull/2)
+
 [Ссылка на репозиторий](https://github.com/skalolaz2012/movies-explorer-frontend)
 
 [Ссылка на макет Figma](https://disk.yandex.ru/d/DJKrcOgX0CwGZA)

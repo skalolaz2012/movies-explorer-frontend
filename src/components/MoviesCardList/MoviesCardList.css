@@ -12,6 +12,10 @@
   row-gap: 32px;
   column-gap: 20px;
 }
+.cards-error {
+  margin: 0 auto;
+  text-align: center;
+}
 
 @media (max-width: 1279px) {
   .cards-list {
