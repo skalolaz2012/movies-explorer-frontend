@@ -90,6 +90,7 @@ function App() {
           localStorage.setItem('jwt', res.token)
           setIsLoggedIn(true)
           navigate('/movies', { replace: true })
+          window.location.reload()
         }
       })
       .catch((error) => {
