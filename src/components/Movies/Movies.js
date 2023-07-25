@@ -11,7 +11,8 @@ const Movies = ({ setSavedMovies, savedMovies, onLikeMovie }) => {
   const [searchedMovies, setSearchedMovies] = useState([])
   const [isEmptyInput, setIsEmptyInput] = useState(false)
   const [notFound, setNotFound] = useState(false)
-  const [preloader, setPreloader] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     getAllMovies()
@@ -22,23 +23,26 @@ const Movies = ({ setSavedMovies, savedMovies, onLikeMovie }) => {
     return moviesApi
       .getAllMovies()
       .then((res) => {
-        setPreloader(true)
+        setIsLoading(true)
         setAllMovies(res)
+        setError(false)
       })
-      .catch((err) => console.log(err))
-      .finally(() => setPreloader(false))
+      .catch((err) => {
+        setError(true)
+        console.log(err)})
+      .finally(() => setIsLoading(false))
   }
 
   async function getSavedMovies() {
     return mainApi
       .getMovies()
       .then((res) => {
-        setPreloader(true)
+        setIsLoading(true)
         setSavedMovies(res)
         localStorage.setItem('savedMovies', JSON.stringify(res))
       })
       .catch((err) => console.log(err))
-      .finally(() => setPreloader(false))
+      .finally(() => setIsLoading(false))
   }
 
   const handleSearch = (searchState) => {
@@ -86,9 +90,10 @@ const Movies = ({ setSavedMovies, savedMovies, onLikeMovie }) => {
   return (
     <main>
       <SearchForm onSearch={handleSearch} query={query} checkbox={isShort} />
+      {error && <p className="cards-error">Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p>}
       {isEmptyInput && <p className="cards-error">Нужно ввести ключевое слово</p>}
       {notFound && <p className="cards-error">Ничего не найдено</p>}
-      {preloader && <Preloader />}
+      {isLoading && <Preloader />}
       <>
         <MoviesCardList
           movies={

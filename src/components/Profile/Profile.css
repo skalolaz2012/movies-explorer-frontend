@@ -81,6 +81,7 @@
   margin-bottom: -16px;
 }
 .profile__buttons-wrap {
+  position: relative;
   margin-top: 28vh;
   display: flex;
   flex-direction: column;
@@ -100,6 +101,18 @@
 }
 .profile__submit-button:hover {
   opacity: 0.7;
+}
+.profile__submit-success {
+  position: absolute;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  display: block;
+  text-align: center;
+  top: -4vh;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .profile__signout {
   all: unset;

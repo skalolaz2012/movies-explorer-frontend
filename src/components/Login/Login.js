@@ -4,7 +4,7 @@ import { useFormAndValidation } from '../../hooks/useFormAndValidation'
 import Logo from '../Logo/Logo'
 import './Login.css'
 
-const Login = ({ onLogin, isLoggedIn }) => {
+const Login = ({ onLogin, isLoggedIn, error, errMsg }) => {
   const { values, handleChange, errors, isValid, setIsValid, resetForm } =
     useFormAndValidation()
   const navigate = useNavigate()
@@ -12,11 +12,12 @@ const Login = ({ onLogin, isLoggedIn }) => {
   function handleLogin(e) {
     e.preventDefault()
     onLogin(values.email, values.password)
-    resetForm()
   }
 
   useEffect(() => {
-    isLoggedIn && navigate('/movies')
+    if (isLoggedIn) {
+      navigate('/movies');
+    }
   }, [isLoggedIn])
 
   useEffect(() => {
@@ -74,6 +75,7 @@ const Login = ({ onLogin, isLoggedIn }) => {
                     {errors.password}
                   </span>
                 </div>
+                {error && <span className="sign__error">{errMsg.errorText}</span>}
               </div>
               <button
                 type="submit"

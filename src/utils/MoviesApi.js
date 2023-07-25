@@ -1,3 +1,5 @@
+import { NOMOREPARTIES_URL } from '../utils/constants'
+
 class MoviesApi {
   constructor({ url, headers }) {
     this._url = url
@@ -12,7 +14,7 @@ class MoviesApi {
     }
   }
 
-  getAllMovies = async() => {
+  getAllMovies = async () => {
     return fetch(`${this._url}`, {
       headers: this._headers,
     }).then(this._checkRes)
@@ -20,7 +22,7 @@ class MoviesApi {
 }
 
 export const moviesApi = new MoviesApi({
-  url: 'https://api.nomoreparties.co/beatfilm-movies',
+  url: NOMOREPARTIES_URL,
   headers: {
     'Content-Type': 'application/json',
   },

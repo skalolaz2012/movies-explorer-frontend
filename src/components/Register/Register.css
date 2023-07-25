@@ -29,6 +29,9 @@
 .sign__form {
   margin-top: 40px;
 }
+.sign__input-fields {
+  position: relative;
+}
 .sign__input-field {
   display: flex;
   flex-direction: column;
@@ -80,6 +83,10 @@
   line-height: 12px;
   color: #ff3055;
 }
+.input__error-profile{
+  top: 34px;
+  right: 0;
+}
 .input__error-field {
 }
 .sign__separator {
@@ -90,6 +97,19 @@
 }
 .sign__bottom-wrap {
   margin-top: 0;
+}
+.sign__error{
+  position: absolute;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  display: block;
+  text-align: center;
+  color: #ff3055;
+  bottom: -10vh;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .sign__submit-button {
   all: unset;

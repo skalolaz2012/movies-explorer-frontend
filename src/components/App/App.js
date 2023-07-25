@@ -28,9 +28,12 @@ function App() {
   const [menuActive, setMenuActive] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({})
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [savedMovies, setSavedMovies] = useState([])
+  const [error, setError] = useState(false)
+  const [errMsg, setErrMsg] = useState('')
+  const [msg, setMsg] = useState(false)
+  const location = useLocation()
   const { pathname } = useLocation()
   const navigate = useNavigate()
 
@@ -40,6 +43,12 @@ function App() {
     { value: 'Сохранённые фильмы', href: '/saved-movies' },
     { value: 'Аккаунт', href: '/profile', icon: iconPath },
   ]
+
+  useEffect(() => {
+    setError(false)
+    setMsg(false)
+    setErrMsg('')
+  }, [location])
 
   useEffect(() => {
     handleCheckToken()
@@ -85,7 +94,7 @@ function App() {
       })
       .catch((error) => {
         setError(true)
-        console.log(error)
+        setErrMsg(error)
       })
       .finally(() => setIsLoading(false))
   }
@@ -100,6 +109,7 @@ function App() {
       })
       .catch((error) => {
         setError(true)
+        setErrMsg(error)
         console.log(error)
       })
       .finally(() => setIsLoading(false))
@@ -109,9 +119,15 @@ function App() {
     mainApi
       .changeUserInfo(data)
       .then((user) => {
+        setError(false)
         setCurrentUser(user)
+        setMsg(true)
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        console.log(error)
+        setMsg(false)
+        setError(true)
+      })
   }
 
   const handleSignOut = () => {
@@ -174,7 +190,6 @@ function App() {
                 <ProtectedRouteElement
                   element={Movies}
                   isLoggedIn={isLoggedIn}
-                  isLoading={isLoading}
                   onLikeMovie={handleLikeMovie}
                   setSavedMovies={setSavedMovies}
                   savedMovies={savedMovies}
@@ -187,7 +202,6 @@ function App() {
                 <ProtectedRouteElement
                   element={SavedMovies}
                   isLoggedIn={isLoggedIn}
-                  isLoading={isLoading}
                   savedMovies={savedMovies}
                 />
               }
@@ -199,8 +213,10 @@ function App() {
                   element={Profile}
                   onSignOut={handleSignOut}
                   isLoggedIn={isLoggedIn}
-                  isLoading={isLoading}
                   onChangeUserInfo={handleChangeUser}
+                  msg={msg}
+                  error={error}
+                  setMsg={setMsg}
                 />
               }
             />
@@ -210,7 +226,11 @@ function App() {
                 isLoggedIn ? (
                   <Navigate to="/movies" />
                 ) : (
-                  <Register onRegister={handleRegister} />
+                  <Register
+                    error={error}
+                    errMsg={errMsg}
+                    onRegister={handleRegister}
+                  />
                 )
               }
             />
@@ -220,7 +240,7 @@ function App() {
                 isLoggedIn ? (
                   <Navigate to="/movies" />
                 ) : (
-                  <Login onLogin={handleLogin} />
+                  <Login error={error} errMsg={errMsg} onLogin={handleLogin} />
                 )
               }
             />

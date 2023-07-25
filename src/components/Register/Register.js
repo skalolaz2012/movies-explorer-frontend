@@ -4,7 +4,7 @@ import { useFormAndValidation } from '../../hooks/useFormAndValidation'
 import Logo from '../Logo/Logo'
 import './Register.css'
 
-const Register = ({ onRegister, isLoggedIn }) => {
+const Register = ({ onRegister, isLoggedIn, error, errMsg }) => {
   const { values, handleChange, errors, isValid, setIsValid, resetForm } =
     useFormAndValidation()
   const navigate = useNavigate()
@@ -95,6 +95,7 @@ const Register = ({ onRegister, isLoggedIn }) => {
                     {errors.password}
                   </span>
                 </div>
+                {error && <span className="sign__error">{errMsg.errorText}</span>}
               </div>
               <button
                 type="submit"

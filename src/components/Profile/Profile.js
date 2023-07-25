@@ -4,7 +4,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 import { useFormAndValidation } from '../../hooks/useFormAndValidation'
 import './Profile.css'
 
-const Profile = ({ onSignOut, onChangeUserInfo }) => {
+const Profile = ({ onSignOut, onChangeUserInfo, msg, setMsg, error }) => {
   const { values, setValues, handleChange, errors, isValid, setIsValid } =
     useFormAndValidation()
   const { currentUser } = useContext(CurrentUserContext)
@@ -46,7 +46,7 @@ const Profile = ({ onSignOut, onChangeUserInfo }) => {
                   disabled={!handleChangeInputs}
                 />
                 <span
-                  className={`name-input-error input__error input__error-field ${
+                  className={`name-input-error input__error input__error-field input__error-profile ${
                     isValid ? '' : 'input__error_visible'
                   }`}
                 >
@@ -70,7 +70,7 @@ const Profile = ({ onSignOut, onChangeUserInfo }) => {
                   disabled={!handleChangeInputs}
                 />
                 <span
-                  className={`email-input-error input__error input__error-field ${
+                  className={`email-input-error input__error input__error-field input__error-profile ${
                     isValid ? '' : 'input__error_visible'
                   }`}
                 >
@@ -78,6 +78,16 @@ const Profile = ({ onSignOut, onChangeUserInfo }) => {
                 </span>
               </div>
               <div className="profile__buttons-wrap">
+                {error && (
+                  <span className="profile__submit-success">
+                    Ошибка редактирования!
+                  </span>
+                )}
+                {msg && (
+                  <span className="profile__submit-success">
+                    Профиль отредактирован!
+                  </span>
+                )}
                 {handleChangeInputs ? (
                   <button
                     type="submit"
@@ -103,6 +113,7 @@ const Profile = ({ onSignOut, onChangeUserInfo }) => {
                       className="profile__submit-button"
                       onClick={() => {
                         setHandleChangeInputs(!handleChangeInputs)
+                        setMsg(false)
                       }}
                     >
                       Редактировать
