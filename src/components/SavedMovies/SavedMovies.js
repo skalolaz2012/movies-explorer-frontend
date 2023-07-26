@@ -1,14 +1,23 @@
 import { useState, useEffect } from 'react'
 import SearchForm from '../SearchForm/SearchForm'
 import MoviesCardList from '../MoviesCardList/MoviesCardList'
-import { mainApi } from '../../utils/MainApi'
-import { SHORT_TIMING } from '../../utils/constants'
+import MainApi from '../../utils/MainApi'
+import { BASE_URL, SHORT_TIMING } from '../../utils/constants'
 
 const SavedMovies = () => {
   const [notFound, setNotFound] = useState(false)
   const [result, setResult] = useState(
     JSON.parse(localStorage.getItem('savedMovies'))
   )
+
+  const mainApi = new MainApi({
+    url: BASE_URL,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
 
   useEffect(() => {
     getSavedMovies()
@@ -17,9 +26,9 @@ const SavedMovies = () => {
   async function getSavedMovies() {
     return mainApi
       .getMovies()
-      .then((res) => {
-        setResult(res)
-        localStorage.setItem('savedMovies', JSON.stringify(res))
+      .then((movies) => {
+        setResult(movies)
+        localStorage.setItem('savedMovies', JSON.stringify(movies))
       })
       .catch((err) => console.log(err))
   }
@@ -37,10 +46,13 @@ const SavedMovies = () => {
         )
         setSavedMovies(updatedFilteredMovies)
         setResult(updatedFilteredMovies)
-        localStorage.setItem(
-          'savedMovies',
-          JSON.stringify(updatedFilteredMovies)
-        )
+        updatedFilteredMovies.length === 0
+          ? 
+            localStorage.setItem('savedMovies', JSON.stringify([]))
+          : localStorage.setItem(
+              'savedMovies',
+              JSON.stringify(updatedFilteredMovies)
+            )
       })
       .catch((error) => console.log(error))
   }

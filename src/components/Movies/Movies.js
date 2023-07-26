@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import SearchForm from '../SearchForm/SearchForm'
 import Preloader from '../Preloader/Preloader'
 import MoviesCardList from '../MoviesCardList/MoviesCardList'
-import { mainApi } from '../../utils/MainApi'
 import { moviesApi } from '../../utils/MoviesApi'
-import { SHORT_TIMING } from '../../utils/constants'
+import MainApi from '../../utils/MainApi'
+import { BASE_URL, SHORT_TIMING } from '../../utils/constants'
 
 const Movies = ({ setSavedMovies, savedMovies, onLikeMovie }) => {
   const [allMovies, setAllMovies] = useState([])
@@ -13,6 +13,15 @@ const Movies = ({ setSavedMovies, savedMovies, onLikeMovie }) => {
   const [notFound, setNotFound] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(false)
+
+  const mainApi = new MainApi({
+    url: BASE_URL,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
 
   useEffect(() => {
     getAllMovies()
@@ -36,10 +45,10 @@ const Movies = ({ setSavedMovies, savedMovies, onLikeMovie }) => {
   async function getSavedMovies() {
     return mainApi
       .getMovies()
-      .then((res) => {
+      .then((movies) => {
         setIsLoading(true)
-        setSavedMovies(res)
-        localStorage.setItem('savedMovies', JSON.stringify(res))
+        setSavedMovies(movies)
+        localStorage.setItem('savedMovies', JSON.stringify(movies))
       })
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false))

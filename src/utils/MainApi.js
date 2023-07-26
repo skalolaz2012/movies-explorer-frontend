@@ -1,6 +1,6 @@
-import { BASE_URL } from './constants'
+import { NOMOREPARTIES_IMG_URL } from './constants'
 
-class MainApi {
+export default class MainApi {
   constructor({ url, headers }) {
     this._url = url
     this._headers = headers
@@ -44,9 +44,9 @@ class MainApi {
         duration: movie.duration,
         year: movie.year,
         description: movie.description,
-        image: `https://api.nomoreparties.co${movie.image.url}`,
+        image: `${NOMOREPARTIES_IMG_URL}${movie.image.url}`,
         trailerLink: movie.trailerLink,
-        thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
+        thumbnail: `${NOMOREPARTIES_IMG_URL}${movie.image.formats.thumbnail.url}`,
         movieId: movie.id,
         nameRU: movie.nameRU,
         nameEN: movie.nameEN,
@@ -61,13 +61,3 @@ class MainApi {
     }).then(this._checkRes)
   }
 }
-
-export const mainApi = new MainApi({
-  // baseURL: 'https://api.diploma-saperov.nomoredomains.rocks',
-  url: BASE_URL,
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-})

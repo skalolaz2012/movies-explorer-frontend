@@ -12,7 +12,6 @@ const Register = ({ onRegister, isLoggedIn, error, errMsg }) => {
   function handleRegister(e) {
     e.preventDefault()
     onRegister(values.name, values.email, values.password)
-    resetForm()
   }
 
   useEffect(() => {

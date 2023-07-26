@@ -121,7 +121,7 @@ const Profile = ({ onSignOut, onChangeUserInfo, msg, setMsg, error }) => {
                     <Link
                       className="profile__signout"
                       onClick={onSignOut}
-                      to="/signin"
+                      to="/"
                     >
                       Выйти из аккаунта
                     </Link>

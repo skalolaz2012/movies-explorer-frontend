@@ -20,7 +20,8 @@ import Navigation from '../Navigation/Navigation'
 import iconPath from '../../images/profile.svg'
 import ProtectedRouteElement from '../ProtectedRoute/ProtectedRoute'
 import Preloader from '../Preloader/Preloader'
-import { mainApi } from '../../utils/MainApi'
+import MainApi from '../../utils/MainApi'
+import { BASE_URL } from '../../utils/constants'
 import { auth } from '../../utils/auth'
 import './App.css'
 
@@ -44,6 +45,15 @@ function App() {
     { value: 'Аккаунт', href: '/profile', icon: iconPath },
   ]
 
+  const mainApi = new MainApi({
+    url: BASE_URL,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
+
   useEffect(() => {
     setError(false)
     setMsg(false)
@@ -63,7 +73,6 @@ function App() {
         .then((data) => {
           if (data) {
             setIsLoggedIn(true)
-            setCurrentUser(data)
             if (pathname === '/signin' || pathname === '/signup') {
               navigate('/movies', { replace: true })
             } else {
@@ -78,6 +87,16 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    isLoggedIn &&
+      mainApi
+        .getUserInfo()
+        .then((user) => {
+          setCurrentUser(user)
+        })
+        .catch((error) => console.log(error))
+  }, [isLoggedIn])
+
   const handleLogin = (email, password) => {
     if (!email || !password) {
       return
@@ -90,7 +109,6 @@ function App() {
           localStorage.setItem('jwt', res.token)
           setIsLoggedIn(true)
           navigate('/movies', { replace: true })
-          window.location.reload()
         }
       })
       .catch((error) => {
@@ -132,6 +150,7 @@ function App() {
   }
 
   const handleSignOut = () => {
+    setSavedMovies([])
     setIsLoggedIn(false)
     localStorage.clear()
     navigate('/', { replace: true })
