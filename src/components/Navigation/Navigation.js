@@ -12,7 +12,7 @@ const Navigation = ({ items, active, setActive }) => {
         <div className="menu__header" onClick={() => setActive(!active)} />
         <ul className="menu__list">
           {items.map((item) => (
-            <li className="menu__item">
+            <li className="menu__item" key={item.value}>
               <NavLink
                 className={({ isActive }) =>
                   `menu__link ${isActive ? 'menu__link_active' : ''}`

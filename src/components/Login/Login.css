@@ -1,8 +1,8 @@
 .sign__input-field_type_password-login {
   margin-top: 22px;
 }
-.sign__bottom-wrap_type_login {
-  margin-top: 0;
+.sign__submit-button_type_login {
+  margin-top: 31vh;
 }
 .sign__input_field_name {
 }
@@ -16,13 +16,13 @@
 }
 
 @media (max-width: 1020px) {
-  .sign__bottom-wrap_type_login {
-    margin-top: 20vh;
+  .sign__submit-button_type_login {
+    margin-top: 22vh;
   }
 }
 
 @media (max-width: 420px) {
-  .sign__bottom-wrap_type_login {
-    margin-top: 22vh;
+  .sign__submit-button_type_login {
+    margin-top: 40vh;
   }
 }

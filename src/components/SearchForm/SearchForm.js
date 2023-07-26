@@ -1,9 +1,34 @@
+import { useState } from 'react'
 import searchIconBg from '../../images/search_find.svg'
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
 import './SearchForm.css'
 
-const SearchForm = () => {
-  const handleSubmit = (e) => e.preventDefault()
+const SearchForm = ({ onSearch, query, checkbox }) => {
+  const [searchValue, setSearchValue] = useState(query || '')
+  const [isSwitched, setSwitched] = useState(checkbox || false)
+
+  const handleChangeSearchValue = (e) => {
+    setSearchValue(e.target.value)
+  }
+
+  const handleChangeCheckboxState = (e) => {
+    setSwitched(e.target.checked)
+    submitSettings(e.target.checked)
+  }
+
+  const submitSettings = (checked) => {
+    const searchState = {
+      query: searchValue,
+      isShort: checked,
+    }
+    onSearch(searchState)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    submitSettings(isSwitched)
+  }
+
   return (
     <section className="search-form">
       <form className="search-form__content" onSubmit={handleSubmit} noValidate>
@@ -16,6 +41,8 @@ const SearchForm = () => {
               type="text"
               name="search"
               placeholder="Фильм"
+              value={searchValue}
+              onChange={handleChangeSearchValue}
               required
             />
             <button className="search-form__submit" type="submit">
@@ -27,7 +54,10 @@ const SearchForm = () => {
             </button>
           </div>
           <div className="search-form__line" />
-          <FilterCheckbox />
+          <FilterCheckbox
+            checked={isSwitched}
+            onChange={handleChangeCheckboxState}
+          />
         </div>
       </form>
     </section>

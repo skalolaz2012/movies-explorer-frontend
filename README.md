@@ -1,6 +1,10 @@
 # movies-explorer-frontend
 Фронтенд часть дипломного проекта Яндекс Практикума студента Сергея Сапёрова 
 
+[Ссылка на пул реквест](https://github.com/skalolaz2012/movies-explorer-frontend/pull/2)
+
+[Ссылка на задеплоенный на сервере проект](https://diploma-saperov.nomoredomains.rocks/)
+
 [Ссылка на репозиторий](https://github.com/skalolaz2012/movies-explorer-frontend)
 
 [Ссылка на макет Figma](https://disk.yandex.ru/d/DJKrcOgX0CwGZA)
@@ -24,6 +28,6 @@
 
 [* Бэклог проекта](https://github.com/users/skalolaz2012/projects/1/views/1)
 * Адреса сервера
-  * Публичный IP адрес: 158.160.57.173
+  * Публичный IP адрес: 158.160.38.198
   [* Frontend](https://diploma-saperov.nomoredomains.rocks)
   [* Backend](https://api.diploma-saperov.nomoredomains.rocks)

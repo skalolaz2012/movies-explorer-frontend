@@ -1,11 +1,29 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useFormAndValidation } from '../../hooks/useFormAndValidation'
 import Logo from '../Logo/Logo'
 import './Login.css'
 
-const Login = ({ email }) => {
+const Login = ({ onLogin, isLoggedIn, error, errMsg }) => {
+  const { values, handleChange, errors, isValid, setIsValid, resetForm } =
+    useFormAndValidation()
+  const navigate = useNavigate()
+
   function handleLogin(e) {
     e.preventDefault()
+    onLogin(values.email, values.password)
   }
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/movies');
+    }
+  }, [isLoggedIn])
+
+  useEffect(() => {
+    setIsValid(false)
+  }, [])
+
   return (
     <main>
       <section className="sign">
@@ -25,9 +43,16 @@ const Login = ({ email }) => {
                     required
                     className="sign__input sign__input_field_email"
                     id="email-input"
-                    value={email || ''}
+                    value={values.email || ''}
+                    onChange={handleChange}
                   />
-                  <span className="email-input-error sign__input-error input__error-field"></span>
+                  <span
+                    className={`email-input-error input__error input__error-field ${
+                      isValid ? '' : 'input__error_visible'
+                    }`}
+                  >
+                    {errors.email}
+                  </span>
                 </div>
                 <div className="sign__input-field sign__input-field_type_password-login">
                   <label className="sign__label" htmlFor="password-input">
@@ -39,33 +64,36 @@ const Login = ({ email }) => {
                     required
                     className="sign__input sign__input_field_password"
                     id="password-input"
-                    value=""
+                    value={values.password || ''}
+                    onChange={handleChange}
                   />
-                  <span className="password-input-error sign__input-error input__error-field"></span>
+                  <span
+                    className={`password-input-error input__error input__error-field ${
+                      isValid ? '' : 'input__error_visible'
+                    }`}
+                  >
+                    {errors.password}
+                  </span>
                 </div>
+                {error && <span className="sign__error">{errMsg.errorText}</span>}
               </div>
+              <button
+                type="submit"
+                className={`sign__submit-button sign__submit-button_type_login ${
+                  !isValid ? 'sign__submit-button_disabled' : ''
+                }`}
+                disabled={!isValid}
+              >
+                Войти
+              </button>
             </form>
           </div>
-          <div className="sign__bottom-wrap sign__bottom-wrap_type_login">
-            <button
-              type="submit"
-              className="sign__submit-button"
-              // ${
-              //   !props.isValid ? 'sign__submit-button_disabled' : ''
-              // }
-              // disabled={!props.isValid}
-            >
-              <Link className="sign__submit-link" to="/movies">
-                Войти
-              </Link>
-            </button>
-            <p className="sign__question">
-              Ещё не зарегистрированы?{' '}
-              <Link to="/signup" className="sign__link">
-                Регистрация
-              </Link>
-            </p>
-          </div>
+          <p className="sign__question">
+            Ещё не зарегистрированы?{' '}
+            <Link to="/signup" className="sign__link">
+              Регистрация
+            </Link>
+          </p>
         </div>
       </section>
     </main>
